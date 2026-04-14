@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Digit Recognizer built with TensorFlow and Flask">
+    <title>MNIST AI Recognizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob shape1"></div>
+        <div class="blob shape2"></div>
+    </div>
+    
+    <div class="glass-card">
+        <header>
+            <h1>AI Digit Recognizer</h1>
+            <p>Draw a number from 0 to 9 in the canvas below</p>
+        </header>
+
+        <div class="canvas-container">
+            <canvas id="paintCanvas" width="280" height="280"></canvas>
+        </div>
+
+        <div class="controls">
+            <button id="predictBtn" class="btn primary">Predict Digit</button>
+            <button id="clearBtn" class="btn secondary">Clear Canvas</button>
+        </div>
+
+        <div id="result" class="result-container hidden">
+            <div class="prediction">
+                <span>Predicted:</span>
+                <strong id="digitVal">-</strong>
+            </div>
+            <div class="confidence">
+                <span>Confidence:</span>
+                <span id="confidenceVal">-</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
